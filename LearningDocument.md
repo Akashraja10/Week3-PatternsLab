@@ -5,7 +5,7 @@
 
 # Day 1
 
-## Task 3.1 – Custom Exception Handling
+## Task 1.1 – Custom Exception Handling
 
 ### Objective
 
@@ -46,7 +46,7 @@ Create a custom `InsufficientFundsException` with a `DeficitAmount` property and
 
 ---
 
-## Task 3.2 – IDisposable & using
+## Task 1.2 – IDisposable & using
 
 ### Objective
 
@@ -87,7 +87,7 @@ Understand deterministic resource cleanup using `IDisposable`, `using`, finalize
 
 ---
 
-## Task 3.3 – Async/Await
+## Task 1.3 – Async/Await
 
 ### Objective
 
@@ -129,7 +129,7 @@ Understand asynchronous programming and compare sequential versus concurrent exe
 
 # Day 2 – Design Patterns
 
-## Task 3.4 – Singleton Pattern
+## Task 1.4 – Singleton Pattern
 
 ### Objective
 Implement a thread-safe Logger Singleton using `Lazy<T>` and verify that multiple Threads and Tasks access the same object.
@@ -156,7 +156,7 @@ A Singleton class has:
 
 ---
 
-# Task 3.5 – Factory Pattern & Factory Method
+# Task 1.5 – Factory Pattern & Factory Method
 
 ## Objective
 
@@ -209,7 +209,7 @@ Each factory is responsible for creating one specific object.
 
 ---
 
-# Task 3.6 – Observer Pattern
+# Task 1.6 – Observer Pattern
 
 ## Objective
 
@@ -289,3 +289,20 @@ This significantly reduced the amount of code.
 | Observer | Button.Click, TextChanged, Timer.Elapsed |
 
 ---
+
+# Day 3 - Strategy, Repository+UoW, Adapter/Facade 
+
+Strategy Pattern: 
+Choose different algorithms or behaviors at runtime without changing the client code.
+
+Repository Pattern: 
+Centralizes CRUD operations and abstracts data access using a generic interface.
+
+Unit of Work: 
+Manages multiple repositories through a single object and provides a common Save() operation.
+
+Adapter Pattern: 
+Converts one interface or data format into another so incompatible systems can work together.
+
+Facade Pattern: 
+complex workflows by exposing a single method that internally coordinates multiple services.
