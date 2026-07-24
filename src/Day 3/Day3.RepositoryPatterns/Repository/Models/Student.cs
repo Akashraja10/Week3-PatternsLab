@@ -1,0 +1,11 @@
+﻿using System;
+
+namespace Day3.RepositoryPatterns.Repository.Models
+{
+    public class Student
+    {
+        public int Id { get; set; }
+        public string? Name { get; set; }
+        public int Age { get; set; }
+    }
+}
