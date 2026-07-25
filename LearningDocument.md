@@ -306,3 +306,28 @@ Converts one interface or data format into another so incompatible systems can w
 
 Facade Pattern: 
 complex workflows by exposing a single method that internally coordinates multiple services.
+
+
+# Day 4 - Reflection, TPL & Attributes
+
+## Task 3.10 - Thread vs Task vs Parallel
+- Thread is a low-level OS thread.
+- Task is a higher-level abstraction that usually uses the Thread Pool.
+- Parallel.ForEach automatically distributes CPU-bound work across available cores.
+- Use Stopwatch to compare execution times.
+- Avoid creating raw threads unless you have a specific need.
+
+## Task 3.11 - Reflection
+- Reflection allows code to inspect other code at runtime.
+- Type represents metadata about a class.
+- GetProperties(), GetMethods(), and GetConstructors() inspect a type.
+- Activator.CreateInstance() creates objects dynamically.
+- PropertyInfo.SetValue() and MethodInfo.Invoke() let you modify objects and invoke methods dynamically.
+- Reflection powers frameworks like ASP.NET Core, Entity Framework, and JSON serializers.
+
+## Task 3.12 - Custom Attributes
+- Custom attributes inherit from the Attribute class.
+- AttributeUsage specifies where an attribute can be applied.
+- Reflection can retrieve attributes using GetCustomAttribute<T>().
+- Custom validation can be implemented by combining Reflection and Attributes.
+- ASP.NET Core's built-in validation attributes (e.g., [Required], [StringLength]) use the same concepts.
