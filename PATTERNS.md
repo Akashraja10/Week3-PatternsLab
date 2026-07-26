@@ -7,6 +7,7 @@ For each pattern:
 - Real-world example
 - Where it appears later in ASP.NET Core/.NET
 - Easy way to remember
+- Example
 
 ## 1. Singleton Pattern
 
@@ -24,6 +25,12 @@ Caching
 Easy Way to Remember
 One class ? One object ? Shared everywhere
 
+## Example
+```csharp
+Logger logger = Logger.Instance;
+logger.Log("Application Started");
+```
+
 ## 2. Factory Pattern
 
 Purpose
@@ -40,6 +47,12 @@ Object factories
 Easy Way to Remember
 Instead of new, ask a Factory to create it.
 
+## Example
+```csharp
+IVehicle vehicle = VehicleFactory.CreateVehicle("Car");
+vehicle.Drive();
+```
+
 ## 3. Factory Method Pattern
 
 Purpose
@@ -54,6 +67,11 @@ Different database providers
 
 Easy Way to Remember
 Each factory knows how to create only one product.
+
+## Example
+```csharp
+IVehicleFactory factory = new CarFactory();
+```
 
 ## 4. Observer Pattern
 
@@ -71,6 +89,14 @@ Notifications
 Easy Way to Remember
 One publisher ? Many subscribers
 
+## Example
+```csharp
+channel.UploadVideo("Design Patterns");
+
+subscriber1.Update();
+subscriber2.Update();
+```
+
 ## 5. Strategy Pattern
 
 Purpose
@@ -87,6 +113,13 @@ Sorting algorithms
 Easy Way to Remember
 Same task, different ways of doing it.
 
+## Example
+```csharp
+shoppingCart.SetPaymentStrategy(new CreditCardPaymentStrategy());
+
+shoppingCart.Checkout(5000);
+```
+
 ## 6. Repository Pattern
 Purpose
 Provides a common interface for CRUD operations and hides data access logic.
@@ -102,6 +135,13 @@ Database layer
 Easy Way to Remember
 One place for all database operations.
 
+## Example
+```csharp
+studentRepository.Add(student);
+
+studentRepository.GetById(1);
+```
+
 ## 7. Unit of Work
 
 Purpose
@@ -116,6 +156,15 @@ Transaction Management
 
 Easy Way to Remember
 One manager for many repositories.
+
+## Example
+```csharp
+unitOfWork.StudentRepository.Add(student);
+
+unitOfWork.CourseRepository.Add(course);
+
+unitOfWork.Save();
+```
 
 ## 8. Adapter Pattern
 
@@ -133,6 +182,14 @@ API transformations
 Easy Way to Remember
 Translator between two incompatible systems.
 
+## Example
+```csharp
+IReportGenerator generator =
+    new XmlReportAdapter(new XmlReportGenerator());
+
+generator.GenerateReport();
+```
+
 ## 9. Facade Pattern
 Purpose
 
@@ -149,6 +206,24 @@ Service orchestration
 Easy Way to Remember
 
 One button that performs many tasks.
+
+## Example
+```csharp
+OrderFacade.PlaceOrder();
+```
+
+# Pattern Summary
+
+| Pattern | Primary Purpose | Future Usage |
+|---------|-----------------|--------------|
+| Singleton | Single shared instance | Logging, Configuration, DI |
+| Factory | Object creation | Services, Repositories, DI |
+| Observer | Event notification | Events, SignalR, Notifications |
+| Strategy | Runtime behavior selection | Payments, Discounts, Authentication |
+| Repository | Data access abstraction | Entity Framework, Dapper, APIs |
+| Unit of Work | Transaction management | Database transactions |
+| Adapter | Interface conversion | Third-party integrations |
+| Facade | Simplify complex workflows | Checkout, Registration |
 
 ## 10. Builder Pattern
 Purpose
