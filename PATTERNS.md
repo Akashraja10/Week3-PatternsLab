@@ -1,4 +1,4 @@
-## Week 3 - Design Patterns
+## Week 1 - Design Patterns
 
 This document summarizes all design patterns covered during Week 3 of the Bridge Course.
 
